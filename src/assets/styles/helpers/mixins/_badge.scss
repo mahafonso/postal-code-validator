@@ -1,0 +1,15 @@
+@import '../../../../variables';
+
+@mixin badge($size: 40px, $bg-color: $purple, $txt-color: #fff, $font-size: 13px, $font-weight: bold) {
+  background: $bg-color;
+  border-radius: 50%;
+  color: $txt-color;
+  display: inline-block;
+  font-family: $base-font-number;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  height: $size;
+  line-height: $size;
+  text-align: center;
+  width: $size;
+}

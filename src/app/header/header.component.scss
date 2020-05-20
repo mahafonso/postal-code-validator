@@ -1,0 +1,15 @@
+header {
+  padding: 30px;
+
+  .header__wrapper {
+    margin: 0 auto;
+    max-width: 1360px;
+    text-align: center;
+
+    .wrapper__text {
+      font-size: 28px;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+  }
+}

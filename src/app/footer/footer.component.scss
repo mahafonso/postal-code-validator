@@ -1,0 +1,15 @@
+footer {
+  background: #212121;
+
+  .footer__wrapper {
+    margin: 0 auto;
+    max-width: 1360px;
+    padding: 15px 30px;
+    text-align: center;
+
+    .wrapper__text {
+      color: #FFF;
+      font-size: 14px;
+    }
+  }
+}

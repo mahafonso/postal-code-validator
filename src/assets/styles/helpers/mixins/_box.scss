@@ -1,0 +1,70 @@
+@mixin box($isDropdown: false, $isSideMenu: false) {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .2);
+  padding: 0;
+    width: 100%;
+
+  //title
+  .side-box__header {
+    align-items: center;
+    background: #fafafa;
+    box-shadow: 0 1px 0 0 #e0e0e0;
+    color: #67615b;
+    cursor: default;
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    justify-content: space-between;
+    padding: 15px;
+    position: relative;
+
+    .icon {
+      display: inline-block;
+      font-size: 6px;
+      margin-left: 5px;
+      transition: all 300ms ease-out;
+    }
+  }
+
+  //content
+  .side-box__body { padding: 10px; }
+
+  //footer
+  .side-box__footer {
+    color: $purple;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px;
+  }
+
+  @if $isDropdown {
+      position: relative;
+      z-index: 40;
+
+      &:before {
+          border: 6px solid #fff;
+          box-shadow: 1px -1px 1px -1px rgba(0, 0, 0, .23);
+          box-sizing: border-box;
+          content: '';
+          height: 0;
+          left: 50%;
+          position: absolute;
+          top: 2px;
+          transform: translateX(-50%) rotate(-45deg);
+          transform-origin: 0 0;
+          width: 0;
+      }
+
+      &:after {
+          background: transparent;
+          content: '';
+          height: 20px;
+          left: 0;
+          position: absolute;
+          top: -15px;
+          width: 100%;
+      }
+  }
+}

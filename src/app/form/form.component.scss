@@ -1,0 +1,73 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 960px;
+
+  .form-group {
+    margin: 10px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    #street { width: 400px; }
+
+    #number { width: 100px; }
+
+    #complement { width: 200px; }
+
+    .form__error-msg {
+      color: #bc2c3e;
+      display: block;
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    &.postalCode { flex: 1 100%; }
+  }
+
+  .form__submit {
+    flex: 1 100%;
+    margin: 10px;
+
+    .submit__btn {
+      background: #212121;
+      border: none;
+      color: #FFF;
+      cursor: pointer;
+      padding: 10px;
+      text-transform: uppercase;
+      width: 80px;
+
+      &:disabled { opacity: .4; }
+    }
+  }
+}
+
+.success {
+  margin: 0 auto;
+  text-align: center;
+  width: 240px;
+
+  .success__msg {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .success__info {
+    margin-top: 15px;
+
+    .info__item {
+      font-size: 14px;
+      margin-bottom: 5px;
+      text-align: left;
+
+      .item__title {
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+<form *ngIf="!successForm" class="form" id="form__postal-code" #postalCodeForm="ngForm">
+  <fieldset class="form-group postalCode">
+      <label for="email">Postal Code</label>
+      <input type="text" class="form-control" id="postalCode" name="postalCode" autocomplete="off" required mask="0{5}-0{3}" [showMaskTyped]="true" [(ngModel)]="postalCode" (keyup)="postalCode.length === 9 && validatePostalCode()">
+
+      <span *ngIf="postalCode && postalCode.length === 9 && invalidPostalCode" class="form__error-msg">
+        <!-- <img src="assets/imgs/icons/warning.svg" class="icon icon-warning" /> -->
+
+        Invalid postal code!
+      </span>
+  </fieldset>
+</form>
+
+<form *ngIf="!successForm && postalCode && postalCode.length === 9 && !invalidPostalCode" class="form" id="form__address" #addressForm="ngForm" (ngSubmit)="saveAddress()">
+  <fieldset class="form-group street">
+    <label for="street">Street</label>
+    <input type="text" class="form-control" id="street" name="street" autocomplete="off" required [(ngModel)]="street">
+  </fieldset>
+
+  <fieldset class="form-group number">
+    <label for="number">Number</label>
+    <input type="text" class="form-control" id="number" name="number" autocomplete="off" required autofocus [(ngModel)]="number">
+  </fieldset>
+
+  <fieldset class="form-group complement">
+    <label for="complement">Complement</label>
+    <input type="text" class="form-control" id="complement" name="complement" autocomplete="off" [(ngModel)]="complement">
+  </fieldset>
+
+  <fieldset class="form-group neighborhood">
+    <label for="neighborhood">Neighborhood</label>
+    <input type="text" class="form-control" id="neighborhood" name="neighborhood" autocomplete="off" required [(ngModel)]="neighborhood">
+  </fieldset>
+
+  <fieldset class="form-group city">
+    <label for="city">City</label>
+    <input type="text" class="form-control" id="city" name="city" autocomplete="off" required [(ngModel)]="city">
+  </fieldset>
+
+  <fieldset class="form-group state">
+    <label for="state">State</label>
+    <input type="text" class="form-control" id="state" name="state" autocomplete="off" required [(ngModel)]="state">
+  </fieldset>
+
+  <fieldset class="form-group form__submit">
+    <button type="submit" name="submit" class="submit__btn" value="Enviar" [disabled]="!addressForm.form.valid">Enviar</button>
+  </fieldset>
+</form>
+
+<div *ngIf="successForm" class="success">
+  <p class="success__msg">Address success sent!</p>
+
+  <div class="success__info">
+    <div class="info__item">
+      <span class="item__title">Postal Code: </span>
+      <span class="item__content">{{address.postalCode}}</span>
+    </div>
+
+    <div class="info__item">
+      <span class="item__title">Street: </span>
+      <span class="item__content">{{address.street}}</span>
+    </div>
+
+    <div class="info__item">
+      <span class="item__title">Number: </span>
+      <span class="item__content">{{address.number}}</span>
+    </div>
+
+    <div *ngIf="address.complement" class="info__item">
+      <span class="item__title">Complement: </span>
+      <span class="item__content">{{address.complement}}</span>
+    </div>
+
+    <div class="info__item">
+      <span class="item__title">Neighborhood: </span>
+      <span class="item__content">{{address.neighborhood}}</span>
+    </div>
+
+    <div class="info__item">
+      <span class="item__title">City: </span>
+      <span class="item__content">{{address.city}}</span>
+    </div>
+
+    <div class="info__item">
+      <span class="item__title">State: </span>
+      <span class="item__content">{{address.state}}</span>
+    </div>
+  </div>
+</div>

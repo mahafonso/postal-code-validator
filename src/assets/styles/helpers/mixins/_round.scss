@@ -1,0 +1,11 @@
+@mixin round($size, $border: none, $boxShadow: none, $backgroundImage: 'none') {
+  background-color: #d8d8d8;
+  background-size: cover;
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+  border: $border;
+  box-shadow: $boxShadow;
+  background-image: $backgroundImage;
+  background-position: center center;
+}
